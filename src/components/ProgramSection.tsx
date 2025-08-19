@@ -27,13 +27,19 @@ export function ProgramSection() {
       return;
     }
 
-    // In a real app, this would submit to a backend
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Konsultasi berhasil dijadwalkan!",
-      description: "Tim kami akan menghubungi Anda dalam 1x24 jam.",
-    });
+    // Create WhatsApp message
+    const message = `Halo, saya tertarik dengan Program "Dasar Kuat".
+
+Nama Orang Tua: ${formData.namaOrangTua}
+Email: ${formData.email}
+Nomor WhatsApp: ${formData.nomorWhatsApp}
+Kelas Anak: ${formData.kelasAnak === 'kelas-10' ? 'Kelas 10' : 'Kelas 11'}
+
+Saya ingin menjadwalkan konsultasi dan diagnosa belajar gratis untuk anak saya. Terima kasih.`;
+
+    // Open WhatsApp with pre-filled message
+    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
 
     // Reset form
     setFormData({
