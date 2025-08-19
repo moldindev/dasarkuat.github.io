@@ -9,7 +9,7 @@ import { toast } from "@/hooks/use-toast";
 export function ProgramSection() {
   const [formData, setFormData] = useState({
     namaOrangTua: "",
-    email: "",
+    alamat: "",
     nomorWhatsApp: "",
     kelasAnak: "",
   });
@@ -18,7 +18,7 @@ export function ProgramSection() {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.namaOrangTua || !formData.email || !formData.nomorWhatsApp || !formData.kelasAnak) {
+    if (!formData.namaOrangTua || !formData.alamat || !formData.nomorWhatsApp || !formData.kelasAnak) {
       toast({
         title: "Form belum lengkap",
         description: "Mohon isi semua field yang diperlukan.",
@@ -31,20 +31,20 @@ export function ProgramSection() {
     const message = `Halo, saya tertarik dengan Program "Dasar Kuat".
 
 Nama Orang Tua: ${formData.namaOrangTua}
-Email: ${formData.email}
+Alamat: ${formData.alamat}
 Nomor WhatsApp: ${formData.nomorWhatsApp}
-Kelas Anak: ${formData.kelasAnak === 'kelas-10' ? 'Kelas 10' : 'Kelas 11'}
+Kelas Anak: ${formData.kelasAnak === 'kelas-10' ? 'Kelas 10' : formData.kelasAnak === 'kelas-11' ? 'Kelas 11' : 'Kelas 12'}
 
 Saya ingin menjadwalkan konsultasi dan diagnosa belajar gratis untuk anak saya. Terima kasih.`;
 
     // Open WhatsApp with pre-filled message
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6282352513196?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     // Reset form
     setFormData({
       namaOrangTua: "",
-      email: "",
+      alamat: "",
       nomorWhatsApp: "",
       kelasAnak: "",
     });
@@ -143,13 +143,12 @@ Saya ingin menjadwalkan konsultasi dan diagnosa belajar gratis untuk anak saya. 
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
+                <Label htmlFor="alamat">Alamat *</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange("email", e.target.value)}
-                  placeholder="nama@email.com"
+                  id="alamat"
+                  value={formData.alamat}
+                  onChange={(e) => handleInputChange("alamat", e.target.value)}
+                  placeholder="Masukkan alamat lengkap"
                   required
                 />
               </div>
@@ -174,6 +173,7 @@ Saya ingin menjadwalkan konsultasi dan diagnosa belajar gratis untuk anak saya. 
                   <SelectContent>
                     <SelectItem value="kelas-10">Kelas 10</SelectItem>
                     <SelectItem value="kelas-11">Kelas 11</SelectItem>
+                    <SelectItem value="kelas-12">Kelas 12</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
