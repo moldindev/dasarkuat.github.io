@@ -1,12 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useRef } from "react";
+import { HeroSection } from "@/components/HeroSection";
+import { PainPointsSection } from "@/components/PainPointsSection";
+import { OutcomesSection } from "@/components/OutcomesSection";
+import { ProgramSection } from "@/components/ProgramSection";
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
+  const ctaSectionRef = useRef<HTMLDivElement>(null);
+
+  const scrollToCTA = () => {
+    ctaSectionRef.current?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <HeroSection onCtaClick={scrollToCTA} />
+      
+      {/* Pain Points Section */}
+      <PainPointsSection />
+      
+      {/* Outcomes Section */}
+      <OutcomesSection />
+      
+      {/* Program & CTA Section */}
+      <div ref={ctaSectionRef}>
+        <ProgramSection />
       </div>
+      
+      <Toaster />
     </div>
   );
 };
