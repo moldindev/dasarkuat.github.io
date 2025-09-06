@@ -16,7 +16,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      index tsx
       {/* Hero Section */}
       <HeroSection onCtaClick={scrollToCTA} />
       
