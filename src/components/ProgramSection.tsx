@@ -108,9 +108,9 @@ Saya ingin menjadwalkan konsultasi dan diagnosa belajar gratis untuk anak saya. 
         <div className="mb-16">
           <div className="max-w-4xl mx-auto bg-card rounded-xl p-8 shadow-soft border-l-4 border-l-accent">
             <blockquote className="text-lg italic text-foreground leading-relaxed mb-4">
-              "Sebagai seorang pendidik, saya melihat terlalu banyak siswa cerdas yang menyerah karena merasa tertinggal. 'Dasar Kuat' lahir dari keyakinan bahwa setiap anak berhak mendapatkan kesempatan kedua untuk benar-benar memahami, bukan hanya menghafal. Misi kami sederhana: mengembalikan kepercayaan diri mereka, satu konsep pada satu waktu."
+              "Sebagai seorang pendidik, saya melihat terlalu banyak siswa cerdas yang menyerah karena merasa tertinggal. 'Dasar Kuat' lahir dari keyakinan bahwa setiap anak berhak mendapatkan kesempatan kedua untuk benar-benar memahami, bukan hanya menghafal. Misi kami sederhana: Membuat setiap anak benar-benar paham — seberapa pun sulit konsepnya — lewat penjelasan yang sederhana dan bertahap."
             </blockquote>
-            <cite className="text-accent font-semibold">- Ahmad Ramadhan, Founder Dasar Kuat</cite>
+            <cite className="text-accent font-semibold">- Maulana Syafiuddin, Founder Dasar Kuat</cite>
           </div>
         </div>
 
